@@ -1,0 +1,35 @@
+import React from 'react'
+import { Container } from '../Container'
+
+export const Header = ({className}) => {
+  return (
+    <header className="md:py-4 py-3 bg-black text-white md:text-sm text-[12px] font-normal">
+      <Container>
+        
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+
+          <div className="hidden md:block"></div>
+
+          <div className="text-center">
+            <p>
+              Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+              <a href="#" className="font-semibold underline pl-2">
+                Shop Now
+              </a>
+            </p>
+          </div>
+
+          <div className="flex justify-center md:justify-end">
+            <select className="cursor-pointer bg-black outline-none">
+              <option>English</option>
+              <option>Bangla</option>
+              <option>Russian</option>
+              <option>Japanese</option>
+            </select>
+          </div>
+
+        </div>
+      </Container>
+    </header>
+  )
+}
