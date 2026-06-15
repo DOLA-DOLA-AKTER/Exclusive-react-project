@@ -25,15 +25,15 @@ export const Banner = () => {
             </div>
         ),
         customPaging: i => (
-            <div className="dot-bar"></div>
+            <div className="bg-white/50 md:w-3 w-2 md:h-3 h-2 rounded-full"></div>
         ),
     };
     return (
         <div>
             <Container className="py-0">
-                <div className='flex flex-col lg:flex-row  lg:gap-11 gap-1 py-5 lg:py-0'>
-                    <div className='lg:w-[20%] w-full lg:border-r lg:border-black/30 lg:pt-14 pt-5 flex items-center justify-center lg:block'>
-                        <ul className='md:text-base text-sm lg:leading-6 leading-4 font-normal flex flex-col gap-5 mr-4'>
+                <div className='flex flex-col xl:flex-row  xl:gap-11 gap-1 py-5 xl:py-0'>
+                    <div className='xl:w-[20%] w-full xl:border-r xl:border-black/30 lg:pt-14 pt-5 flex items-center justify-center xl:block'>
+                        <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-3.5 mr-4'>
                             <li className="flex items-center justify-between"><a href="#">Woman’s Fashion</a> <MdKeyboardArrowRight className='text-xl' /></li>
                             <li className="flex items-center justify-between"><a href="#">Men’s Fashion</a> <MdKeyboardArrowRight className='text-xl' /></li>
                             <li><a href="#">Electronics</a></li>
@@ -45,7 +45,7 @@ export const Banner = () => {
                             <li><a href="#">Health & Beauty</a></li>
                         </ul>
                     </div>
-                    <div className='lg:w-[80%] w-[95%] pt-10'>
+                    <div className='xl:w-[70%] w-[95%] pt-10'>
                         <Slider {...settings}>
                             <div>
                                 <img src={banner} alt="banner 1" className='w-full h-full object-cover' />
