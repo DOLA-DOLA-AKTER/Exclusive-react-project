@@ -30,10 +30,10 @@ export const Banner = () => {
     };
     return (
         <div>
-            <Container className="py-0">
+            <Container className='lg:py-0! py-0!'>
                 <div className='flex flex-col xl:flex-row  xl:gap-11 gap-1 py-5 xl:py-0'>
-                    <div className='xl:w-[20%] w-full xl:border-r xl:border-black/30 lg:pt-14 pt-5 flex items-center justify-center xl:block'>
-                        <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-3.5 mr-4'>
+                    <div className='xl:w-[20%] w-full xl:border-r xl:border-black/30 lg:pt-10 pt-5 flex items-center justify-center xl:block'>
+                        <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4'>
                             <li className="flex items-center justify-between"><a href="#">Woman’s Fashion</a> <MdKeyboardArrowRight className='text-xl' /></li>
                             <li className="flex items-center justify-between"><a href="#">Men’s Fashion</a> <MdKeyboardArrowRight className='text-xl' /></li>
                             <li><a href="#">Electronics</a></li>
@@ -45,7 +45,8 @@ export const Banner = () => {
                             <li><a href="#">Health & Beauty</a></li>
                         </ul>
                     </div>
-                    <div className='xl:w-[70%] w-[95%] pt-10'>
+
+                    <div className='xl:w-[70%] w-[95%] lg:pt-10 pt-5'>
                         <Slider {...settings}>
                             <div>
                                 <img src={banner} alt="banner 1" className='w-full h-full object-cover' />

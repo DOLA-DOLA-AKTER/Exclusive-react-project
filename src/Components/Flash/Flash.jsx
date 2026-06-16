@@ -1,8 +1,6 @@
 import React from 'react'
 import { Container } from '../Container'
 import { Heading } from '../Heading'
-import { Buttons } from '../Button/Buttons';
-import { Countdown } from './Countdown';
 import { RedButton } from '../Button/RedButton';
 import { Card } from '../Card/Card';
 import img1 from '../../assets/img1.png'
@@ -14,29 +12,12 @@ import half_star from "../../assets/star-half.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { RightButton } from '../Button/RightButton';
-import { LeftButton } from '../Button/LeftButton';
+import { Countdown } from '../Countdown';
+import SampleNextArrow from '../Button/SampleNextArrow';
+import SamplePrevArrow from '../Button/SamplePrevArrow';
 
 
 export const Flash = () => {
-
-    function SampleNextArrow({ onClick }) {
-        return (
-            <div onClick={onClick}>
-                <RightButton />
-            </div>
-        );
-    }
-
-    function SamplePrevArrow({ onClick }) {
-        return (
-            <div onClick={onClick}>
-                <LeftButton />
-            </div>
-        );
-    }
-
-
     var settings = {
         dots: false,
         infinite: true,
@@ -44,8 +25,8 @@ export const Flash = () => {
         slidesToShow: 4,
         slidesToScroll: 4,
         initialSlide: 0,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
+        nextArrow: <SampleNextArrow/>,
+        prevArrow: <SamplePrevArrow/>,
         responsive: [
             {
                 breakpoint: 1170,
@@ -79,7 +60,7 @@ export const Flash = () => {
     };
 
     return (
-        <div className="lg:py-25 py-20">
+        <div>
             <Container>
                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:gap-22">
                     <Heading

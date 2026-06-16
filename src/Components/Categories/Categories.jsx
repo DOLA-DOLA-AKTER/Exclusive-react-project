@@ -13,29 +13,13 @@ import { RiGamepadLine } from "react-icons/ri";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { RightButton } from '../Button/RightButton'
-import { LeftButton } from '../Button/LeftButton'
+
+import SampleNextArrow from '../Button/SampleNextArrow';
+import SamplePrevArrow from '../Button/SamplePrevArrow';
 
 
 
 export const Categories = () => {
-
-    function SampleNextArrow({ onClick }) {
-        return (
-            <div onClick={onClick}>
-                <RightButton />
-            </div>
-        );
-    }
-
-    function SamplePrevArrow({ onClick }) {
-        return (
-            <div onClick={onClick}>
-                <LeftButton />
-            </div>
-        );
-    }
-
 
     var settings = {
         dots: false,
@@ -79,7 +63,7 @@ export const Categories = () => {
     };
     return (
         <div>
-            <Container className='border-y border-black/30 lg:py-25 py-20'>
+            <Container className='border-y border-black/30'>
                 <div>
                     <Heading
                         title="Categories"

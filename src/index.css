@@ -14,15 +14,11 @@
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
 
-  /* --color-primary: #734bdf; */
   --color-black: #000000;
   --color-gray: #737681;
   --color-red: #DB4444;
   --color-green: #00FF66;
   --color-golden: #FFAD33;
-  /* --color-light-gray: #f6f6f7; */
-  /* --color-white-opacity: rgba(255, 255, 255, 0.062);
-  --color-lightwhite-opacity: rgba(255, 255, 255, 0.502); */
 }
 
 li{
@@ -92,16 +88,9 @@ li{
   }
 }
 
-.slick-prev,
-.slick-next {
-  top: -70px;
-}
 
-.slick-prev {
-  left: auto;
-  right: 60px;
-}
+/* slick right-left button */
 
-.slick-next {
-  right: 0;
+.slick-list{
+  @apply relative
 }

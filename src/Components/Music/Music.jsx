@@ -1,13 +1,13 @@
 import React from 'react'
 import { Container } from '../Container'
 import music from '../../assets/music.png'
-import { GreenButton } from '../Button/GreenButton'
-import { Counter } from './Counter'
+import { RedButton } from '../Button/RedButton'
+import { Countdown } from '../Countdown'
 
 export const Music = () => {
   return (
     <div>
-      <Container>
+      <Container className='lg:py-0! py-0!'>
         <div className="relative">
           <img
             src={music}
@@ -26,10 +26,15 @@ export const Music = () => {
             </h2>
 
             <div className="pb-5 md:pb-8 lg:pb-10">
-              <Counter />
+              <Countdown
+              colon='hidden'
+              className='flex flex-col-reverse items-center justify-center bg-white rounded-full md:w-15 w-13 h-13 md:h-15'
+              counts="!text-base !font-semibold !leading-5"
+              countText="!text-xs !font-normal md:!leading-3 !leading-2"
+              />
             </div>
 
-            <GreenButton>Buy Now!</GreenButton>
+            <RedButton className="bg-green!">Buy Now!</RedButton>
           </div>
         </div>
       </Container>

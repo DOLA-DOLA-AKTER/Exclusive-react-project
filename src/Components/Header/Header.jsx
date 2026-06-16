@@ -4,7 +4,7 @@ import { Container } from '../Container'
 export const Header = ({className}) => {
   return (
     <header className="md:py-4 py-3 bg-black text-white md:text-sm text-[12px] font-normal">
-      <Container>
+      <Container className='lg:py-0! py-0!'>
         
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
 

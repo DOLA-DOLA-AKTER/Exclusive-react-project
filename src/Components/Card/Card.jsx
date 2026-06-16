@@ -5,7 +5,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 
 
-export const Card = ({ img, img_title, percent, title, num, del, children, star }) => {
+export const Card = ({ img, img_title, percentCss, percent, title, discount, price, children, review, priceCss }) => {
   return (
     <div className='w-67.5 mx-auto group cursor-pointer'>
       <div className='relative'>
@@ -13,7 +13,7 @@ export const Card = ({ img, img_title, percent, title, num, del, children, star 
 
         <div className='absolute top-0 left-0 flex justify-between w-full px-3 pt-3'>
           <div>
-            <p className='text-white text-xs font-normal leading-4.5 bg-red rounded py-1 px-3'>-{percent}%</p>
+            <p className={`text-white text-xs font-normal leading-4.5 bg-red rounded py-1 px-3 ${percentCss}` }>-{percent}%</p>
           </div>
           <div className='space-y-2'>
             <GoHeart className='text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110' />
@@ -32,15 +32,15 @@ export const Card = ({ img, img_title, percent, title, num, del, children, star 
         <h4>{title}</h4>
 
         <div className="flex items-center gap-2 py-2">
-          <span className="text-red">${num}</span>
-          <del className="text-gray-400">${del}</del>
+          <span className="text-red">${discount}</span>
+          <del className={`text-gray-400 ${priceCss}`}>${price}</del>
         </div>
 
         <div className="flex items-center gap-2">
           <div className="flex gap-1 text-golden text-[20px]">
             {children}
           </div>
-          <p className="text-gray-400 text-[14px] font-semibold">({star})</p>
+          <p className="text-gray-400 text-[14px] font-semibold">({review})</p>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ export const Navber = () => {
 
   return (
     <nav className='lg:py-7 py-4 border-b border-black/30'>
-      <Container>
+      <Container className='lg:py-0! py-0!'>
 
         <div className="flex items-center justify-between">
 
