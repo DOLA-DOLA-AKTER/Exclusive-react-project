@@ -12,14 +12,14 @@ import { Featured } from '../Components/Featured'
 export const Home = () => {
   return (
     <div>
-        {/* <Header/>
+        <Header/>
         <Navber/>
         <Banner/>
         <Flash/>
         <Categories/>
         <ThisMonth/>
         <Music/>
-        <Products/> */}
+        <Products/>
         <Featured/>
     </div>
   )
