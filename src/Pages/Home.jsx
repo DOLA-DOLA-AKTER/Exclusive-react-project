@@ -7,18 +7,20 @@ import { Categories } from '../Components/Categories/Categories'
 import { ThisMonth } from '../Components/ThisMonth/ThisMonth'
 import { Music } from '../Components/Music/Music'
 import { Products } from '../Components/Products/Products'
+import { Featured } from '../Components/Featured'
 
 export const Home = () => {
   return (
     <div>
-        <Header/>
+        {/* <Header/>
         <Navber/>
         <Banner/>
         <Flash/>
         <Categories/>
         <ThisMonth/>
         <Music/>
-        <Products/>
+        <Products/> */}
+        <Featured/>
     </div>
   )
 }
