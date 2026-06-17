@@ -61,6 +61,7 @@ export const Categories = () => {
             }
         ]
     };
+    
     return (
         <div>
             <Container className='border-y border-black/30'>
@@ -143,3 +144,4 @@ export const Categories = () => {
         </div>
     )
 }
+

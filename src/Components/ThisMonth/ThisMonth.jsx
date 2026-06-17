@@ -15,7 +15,7 @@ export const ThisMonth = () => {
     return (
         <div>
             <Container>
-                <div className='flex justify-between items-end'>
+                <div className='flex flex-col md:flex-row justify-between items-end'>
                     <Heading
                         title="This Month"
                         heading="Best Selling Products"

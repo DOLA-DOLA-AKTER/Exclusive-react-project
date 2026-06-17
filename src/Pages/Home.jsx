@@ -6,6 +6,7 @@ import { Flash } from '../Components/Flash/Flash'
 import { Categories } from '../Components/Categories/Categories'
 import { ThisMonth } from '../Components/ThisMonth/ThisMonth'
 import { Music } from '../Components/Music/Music'
+import { Products } from '../Components/Products/Products'
 
 export const Home = () => {
   return (
@@ -17,6 +18,7 @@ export const Home = () => {
         <Categories/>
         <ThisMonth/>
         <Music/>
+        <Products/>
     </div>
   )
 }

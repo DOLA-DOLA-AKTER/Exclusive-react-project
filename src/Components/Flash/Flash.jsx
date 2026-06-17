@@ -18,6 +18,7 @@ import SamplePrevArrow from '../Button/SamplePrevArrow';
 
 
 export const Flash = () => {
+
     var settings = {
         dots: false,
         infinite: true,
@@ -69,7 +70,7 @@ export const Flash = () => {
                     />
                     <Countdown />
                 </div>
-                <div className="py-10">
+                <div className="pb-10 md:pt-15 pt-20">
                     <Slider {...settings}>
                         <div >
                             <Card
