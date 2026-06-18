@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Container } from '../Container'
-import { Ul } from '../Ul'
+import { Container } from './Container/Container'
+import { Ul } from './Container/Ul'
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import { IoCartOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";

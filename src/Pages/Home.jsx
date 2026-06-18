@@ -1,15 +1,17 @@
 import React from 'react'
-import { Header } from '../Components/Header/Header'
-import { Navber } from '../Components/Navber/Navber'
-import { Banner } from '../Components/Banner/Banner'
-import { Flash } from '../Components/Flash/Flash'
-import { Categories } from '../Components/Categories/Categories'
-import { ThisMonth } from '../Components/ThisMonth/ThisMonth'
-import { Music } from '../Components/Music/Music'
-import { Products } from '../Components/Products/Products'
+import { Header } from '../Components/Header'
+import { Navber } from '../Components/Navber'
+import { Banner } from '../Components/Banner'
+import { Flash } from '../Components/Flash'
+import { Categories } from '../Components/Categories'
+import { ThisMonth } from '../Components/ThisMonth'
+import { Music } from '../Components/Music'
+import { Products } from '../Components/Products'
 import { Featured } from '../Components/Featured'
-import { Services } from '../Components/Services/Services'
-import { Footer } from '../Components/Footer/Footer'
+import { Services } from '../Components/Services'
+import { Footer } from '../Components/Footer'
+
+
 
 export const Home = () => {
   return (

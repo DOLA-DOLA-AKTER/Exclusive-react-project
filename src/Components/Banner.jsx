@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Container } from '../Container'
+import { Container } from './Container/Container'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import banner from '../../assets/banner.jpg'
+import banner from '../assets/banner.jpg'
 import { TbCategory } from "react-icons/tb";
 
 

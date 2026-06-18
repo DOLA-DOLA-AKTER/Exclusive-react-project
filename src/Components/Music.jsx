@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container } from '../Container'
-import music from '../../assets/music.png'
-import { RedButton } from '../Button/RedButton'
-import { Countdown } from '../Countdown'
+import { Container } from './Container/Container'
+import music from '../assets/music.png'
+import { RedButton } from './Button/RedButton'
+import { Countdown } from './Countdown/Countdown'
 
 export const Music = () => {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import { TbTruckDelivery } from "react-icons/tb";
 import { SlEarphonesAlt } from "react-icons/sl";
 import { GoShieldCheck } from "react-icons/go";
-import { Container } from '../Container';
+import { Container } from './Container/Container';
 
 export const Services = () => {
     const services = [

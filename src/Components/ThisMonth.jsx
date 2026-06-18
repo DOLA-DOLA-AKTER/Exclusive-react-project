@@ -1,14 +1,14 @@
 import React from 'react'
-import { Container } from '../Container'
-import { Heading } from '../Heading'
-import { RedButton } from '../Button/RedButton'
-import { Card } from '../Card/Card'
-import coat from '../../assets/coat.png'
-import bag from '../../assets/bag.png'
-import cooler from '../../assets/cooler.png'
-import bookSelf from '../../assets/book-self.png'
+import { Container } from './Container/Container'
+import { Heading } from './Heading'
+import { RedButton } from './Button/RedButton'
+import { Card } from './Card/Card'
+import coat from '../assets/coat.png'
+import bag from '../assets/bag.png'
+import cooler from '../assets/cooler.png'
+import bookSelf from '../assets/book-self.png'
 import { FaStar } from "react-icons/fa";
-import half_star from "../../assets/star-half.png";
+import half_star from "../assets/star-half.png";
 
 
 export const ThisMonth = () => {

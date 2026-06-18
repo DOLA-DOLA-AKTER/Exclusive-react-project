@@ -1,14 +1,14 @@
 import React from 'react'
-import { Container } from '../Container'
+import { Container } from './Container/Container'
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { GoPaperAirplane } from "react-icons/go";
 import { LuTwitter } from "react-icons/lu";
 import { RiFacebookLine } from "react-icons/ri";
 import { IoLogoInstagram } from "react-icons/io5";
 import { RiLinkedinLine } from "react-icons/ri";
-import qrCode from "../../assets/qr-code.png"
-import google from "../../assets/google-play.png"
-import appstore from "../../assets/appstore.png"
+import qrCode from "../assets/qr-code.png"
+import google from "../assets/google-play.png"
+import appstore from "../assets/appstore.png"
 
 
 export const Footer = () => {

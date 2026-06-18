@@ -2,17 +2,17 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import img5 from "../../assets/img5.png"
-import img6 from "../../assets/img6.png"
-import img7 from "../../assets/img7.png"
-import img8 from "../../assets/img8.png"
-import { Container } from '../Container'
-import { Heading } from '../Heading'
-import { Card } from '../Card/Card'
+import img5 from "../assets/img5.png"
+import img6 from "../assets/img6.png"
+import img7 from "../assets/img7.png"
+import img8 from "../assets/img8.png"
+import { Container } from './Container/Container'
+import { Heading } from './Heading'
+import { Card } from './Card/Card'
 import { FaStar } from "react-icons/fa";
-import SampleNextArrow from '../Button/SampleNextArrow';
-import SamplePrevArrow from '../Button/SamplePrevArrow';
-import { RedButton } from '../Button/RedButton';
+import SampleNextArrow from './Button/SampleNextArrow';
+import SamplePrevArrow from './Button/SamplePrevArrow';
+import { RedButton } from './Button/RedButton';
 
 export const Products = () => {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from './Container'
+import { Container } from './Container/Container'
 import { Heading } from './Heading'
 import featured1 from "../assets/featured-1.png"
 import featured2 from "../assets/featured-2.png"

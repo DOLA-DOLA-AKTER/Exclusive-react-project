@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { countDownDateAndTime } from 'countdown-date-time';
 
-export const Counter = () => {
+export const MusicCounter = () => {
 
     let [count, setCount] = useState({});
     let [timeUp, setTimeUp] = useState(false);

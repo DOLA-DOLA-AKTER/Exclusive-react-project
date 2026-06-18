@@ -1,20 +1,20 @@
 import React from 'react'
-import { Container } from '../Container'
-import { Heading } from '../Heading'
-import { RedButton } from '../Button/RedButton';
-import { Card } from '../Card/Card';
-import img1 from '../../assets/img1.png'
-import img2 from '../../assets/img2.png'
-import img3 from '../../assets/img3.png'
-import img4 from '../../assets/img4.png'
+import { Container } from './Container/Container'
+import { Heading } from './Heading'
+import { RedButton } from './Button/RedButton';
+import { Card } from './Card/Card';
+import img1 from '../assets/img1.png'
+import img2 from '../assets/img2.png'
+import img3 from '../assets/img3.png'
+import img4 from '../assets/img4.png'
 import { FaStar } from "react-icons/fa";
-import half_star from "../../assets/star-half.png";
+import half_star from "../assets/star-half.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Countdown } from '../Countdown';
-import SampleNextArrow from '../Button/SampleNextArrow';
-import SamplePrevArrow from '../Button/SamplePrevArrow';
+import { Countdown } from './Countdown/Countdown';
+import SampleNextArrow from './Button/SampleNextArrow';
+import SamplePrevArrow from './Button/SamplePrevArrow';
 
 
 export const Flash = () => {

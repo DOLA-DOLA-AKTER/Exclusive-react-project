@@ -1,8 +1,8 @@
 import React from 'react'
-import { Heading } from '../Heading'
-import { Container } from '../Container'
-import { Card } from '../Card/Card'
-import { CategoriesCard } from '../Card/CategoriesCard'
+import { Heading } from './Heading'
+import { Container } from './Container/Container'
+import { Card } from './Card/Card'
+import { CategoriesCard } from './Card/CategoriesCard'
 import { CiMobile3 } from "react-icons/ci";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { IoWatchOutline } from "react-icons/io5";
@@ -14,8 +14,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-import SampleNextArrow from '../Button/SampleNextArrow';
-import SamplePrevArrow from '../Button/SamplePrevArrow';
+import SampleNextArrow from './Button/SampleNextArrow';
+import SamplePrevArrow from './Button/SamplePrevArrow';
 
 
 
