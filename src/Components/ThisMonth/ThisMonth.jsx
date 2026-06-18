@@ -15,14 +15,16 @@ export const ThisMonth = () => {
     return (
         <div>
             <Container>
-                <div className='flex flex-col md:flex-row justify-between items-end'>
+                <div className='flex flex-col md:flex-row justify-between md:items-end gap-5'>
                     <Heading
                         title="This Month"
                         heading="Best Selling Products"
                     />
-                    <RedButton>View All</RedButton>
+                    <div className='flex justify-end'>
+                        <RedButton>View All</RedButton>
+                    </div>
                 </div>
-                <div className='pt-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center gap-7.5'>
+                <div className='md:pt-15 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center gap-7.5'>
                     <div>
                         <Card
                         img={coat}

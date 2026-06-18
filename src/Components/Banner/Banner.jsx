@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container } from '../Container'
 import { MdKeyboardArrowRight } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import banner from '../../assets/banner.jpg'
+import { TbCategory } from "react-icons/tb";
 
 
 export const Banner = () => {
+
+    const [show, setShow] = useState(false);
+
     const settings = {
         dots: true,
         infinite: true,
@@ -31,8 +35,14 @@ export const Banner = () => {
     return (
         <div>
             <Container className='lg:py-0! py-0!'>
+
                 <div className='flex flex-col xl:flex-row  xl:gap-11 gap-1 py-5 xl:py-0'>
-                    <div className='xl:w-[20%] w-full xl:border-r xl:border-black/30 lg:pt-10 pt-5 flex items-center justify-center xl:block'>
+                    <div className='p-1 rounded-full block mx-auto xl:hidden text-2xl cursor-pointer duration-300 hover:scale-115 hover:shadow-xl'>
+                        <TbCategory 
+                        onClick={() => setShow(!show)}
+                    />
+                    </div>
+                    <div className={`${show ? "block" : "hidden"} xl:w-[20%] w-full xl:border-r xl:border-black/30 lg:pt-10 pt-5 flex items-center justify-center xl:block`}>
                         <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4'>
                             <li className="flex items-center justify-between"><a href="#">Woman’s Fashion</a> <MdKeyboardArrowRight className='text-xl' /></li>
                             <li className="flex items-center justify-between"><a href="#">Men’s Fashion</a> <MdKeyboardArrowRight className='text-xl' /></li>

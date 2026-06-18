@@ -17,7 +17,6 @@ export const Navber = () => {
 
         <div className="flex items-center justify-between">
 
-          {/* logo */}
           <div className='font-bold text-2xl font-inter leading-6'>
             Exclusive
           </div>
@@ -30,7 +29,6 @@ export const Navber = () => {
             <li><a className="navber" href="#">Sign Up</a></li>
           </Ul>
 
-          {/* desktop search & icons */}
           <div className="hidden lg:flex items-center gap-6">
             <div className='bg-[#F5F5F5] w-60.75 h-9.5 rounded-sm flex items-center gap-2 px-4'>
               <input

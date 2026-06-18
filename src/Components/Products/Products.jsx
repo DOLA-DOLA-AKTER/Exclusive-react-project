@@ -50,6 +50,7 @@ export const Products = () => {
             {
                 breakpoint: 570,
                 settings: {
+                    dots: true,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
@@ -66,7 +67,7 @@ export const Products = () => {
                         heading='Explore Our Products'
                     />
                 </div>
-                <div className="pb-10 md:pt-15 pt-20">
+                <div className="pb-10 md:pt-15 pt-10">
                     <Slider {...settings}>
                         <div className='space-y-15'>
                             <Card

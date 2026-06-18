@@ -8,6 +8,8 @@ import { ThisMonth } from '../Components/ThisMonth/ThisMonth'
 import { Music } from '../Components/Music/Music'
 import { Products } from '../Components/Products/Products'
 import { Featured } from '../Components/Featured'
+import { Services } from '../Components/Services/Services'
+import { Footer } from '../Components/Footer/Footer'
 
 export const Home = () => {
   return (
@@ -21,6 +23,8 @@ export const Home = () => {
         <Music/>
         <Products/>
         <Featured/>
+        <Services/>
+        <Footer/>
     </div>
   )
 }

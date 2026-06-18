@@ -53,6 +53,7 @@ export const Flash = () => {
             {
                 breakpoint: 570,
                 settings: {
+                    dots: true,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
@@ -70,7 +71,7 @@ export const Flash = () => {
                     />
                     <Countdown />
                 </div>
-                <div className="pb-10 md:pt-15 pt-20">
+                <div className="pb-10 md:pt-15 pt-10">
                     <Slider {...settings}>
                         <div >
                             <Card
@@ -78,9 +79,9 @@ export const Flash = () => {
                                 img_title='gamepad'
                                 percent='40'
                                 title="HAVIT HV-G92 Gamepad"
-                                num="120"
-                                del="160"
-                                star='88'
+                                discount="120"
+                                price="160"
+                                review='88'
                             >
                                 <FaStar />
                                 <FaStar />

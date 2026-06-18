@@ -55,6 +55,7 @@ export const Categories = () => {
             {
                 breakpoint: 570,
                 settings: {
+                    dots: true,
                     slidesToShow: 1,
                     slidesToScroll: 1
                 }
@@ -71,7 +72,7 @@ export const Categories = () => {
                         heading="Browse By Category"
                     />
                 </div>
-                <div className='pt-15'>
+                <div className='md:pt-15 pt-10'>
                     <Slider {...settings}>
 
                         <div>
