@@ -76,7 +76,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Breed Dry Dog Food'
                                 className='flex gap-2'
-                                discount='100'
+                                discountPrice='100'
                                 priceCss='hidden'
                                 review='35'
                             >
@@ -92,7 +92,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Breed Dry Dog Food'
                                 className='flex gap-2'
-                                discount='100'
+                                discountPrice='100'
                                 priceCss='hidden'
                                 review='35'
                             >
@@ -110,7 +110,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='CANON EOS DSLR Camera'
                                 className='flex gap-2'
-                                discount='360'
+                                discountPrice='360'
                                 priceCss='hidden'
                                 review='95'
                             >
@@ -126,7 +126,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='CANON EOS DSLR Camera'
                                 className='flex gap-2'
-                                discount='360'
+                                discountPrice='360'
                                 priceCss='hidden'
                                 review='95'
                             >
@@ -144,7 +144,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='ASUS FHD Gaming Laptop'
                                 className='flex gap-2'
-                                discount='700'
+                                discountPrice='700'
                                 priceCss='hidden'
                                 review='325'
                             >
@@ -160,7 +160,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='ASUS FHD Gaming Laptop'
                                 className='flex gap-2'
-                                discount='700'
+                                discountPrice='700'
                                 priceCss='hidden'
                                 review='325'
                             >
@@ -178,7 +178,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Curology Product Set '
                                 className='flex gap-2'
-                                discount='500'
+                                discountPrice='500'
                                 priceCss='hidden'
                                 review='145'
                             >
@@ -194,7 +194,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Curology Product Set '
                                 className='flex gap-2'
-                                discount='500'
+                                discountPrice='500'
                                 priceCss='hidden'
                                 review='145'
                             >
@@ -213,7 +213,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Breed Dry Dog Food'
                                 className='flex gap-2'
-                                discount='100'
+                                discountPrice='100'
                                 priceCss='hidden'
                                 review='35'
                             >
@@ -229,7 +229,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Breed Dry Dog Food'
                                 className='flex gap-2'
-                                discount='100'
+                                discountPrice='100'
                                 priceCss='hidden'
                                 review='35'
                             >
@@ -247,7 +247,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='CANON EOS DSLR Camera'
                                 className='flex gap-2'
-                                discount='360'
+                                discountPrice='360'
                                 priceCss='hidden'
                                 review='95'
                             >
@@ -263,7 +263,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='CANON EOS DSLR Camera'
                                 className='flex gap-2'
-                                discount='360'
+                                discountPrice='360'
                                 priceCss='hidden'
                                 review='95'
                             >
@@ -281,7 +281,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='ASUS FHD Gaming Laptop'
                                 className='flex gap-2'
-                                discount='700'
+                                discountPrice='700'
                                 priceCss='hidden'
                                 review='325'
                             >
@@ -297,7 +297,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='ASUS FHD Gaming Laptop'
                                 className='flex gap-2'
-                                discount='700'
+                                discountPrice='700'
                                 priceCss='hidden'
                                 review='325'
                             >
@@ -315,7 +315,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Curology Product Set '
                                 className='flex gap-2'
-                                discount='500'
+                                discountPrice='500'
                                 priceCss='hidden'
                                 review='145'
                             >
@@ -331,7 +331,7 @@ export const Products = () => {
                                 percentCss='hidden'
                                 title='Curology Product Set '
                                 className='flex gap-2'
-                                discount='500'
+                                discountPrice='500'
                                 priceCss='hidden'
                                 review='145'
                             >

@@ -31,8 +31,8 @@ export const ThisMonth = () => {
                         img_title="coat"
                         percentCss='hidden'
                         title='The north coat'
-                        discount='260'
-                        price='360'
+                        discountPrice='260'
+                        previousPrice='360'
                         review='65'
                         >
                             <FaStar/>
@@ -42,15 +42,14 @@ export const ThisMonth = () => {
                             <FaStar/>
                         </Card>
                     </div>
-
                     <div>
                         <Card
                         img={bag}
                         img_title="bag"
                         percentCss='hidden'
                         title='Gucci duffle bag'
-                        discount='960'
-                        price='1160'
+                        discountPrice='960'
+                        previousPrice='1160'
                         review='65'
                         >
                             <FaStar/>
@@ -60,15 +59,14 @@ export const ThisMonth = () => {
                             <FaStar className='text-gray-300' />
                         </Card>
                     </div>
-
                     <div>
                         <Card
                         img={cooler}
                         img_title="cooler"
                         percentCss='hidden'
                         title='RGB liquid CPU Cooler'
-                        discount='160'
-                        price='170'
+                        discountPrice='160'
+                        previousPrice='170'
                         review='65'
                         >
                             <FaStar/>
@@ -78,14 +76,13 @@ export const ThisMonth = () => {
                             <FaStar className='text-gray-300' />
                         </Card>
                     </div>
-
                     <div>
                         <Card
                         img={bookSelf}
                         img_title="bookSelf"
                         percentCss='hidden'
                         title='Small BookSelf'
-                        discount='360'
+                        discountPrice='360'
                         priceCss='hidden'
                         review='65'
                         >

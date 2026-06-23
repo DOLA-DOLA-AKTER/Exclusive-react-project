@@ -5,7 +5,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 
 
-export const Card = ({ img, img_title, percentCss, percent, title, className, discount, price, children, review, priceCss }) => {
+export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss }) => {
   return (
     <div className='w-67.5 mx-auto group cursor-pointer'>
       <div className='relative'>
@@ -33,8 +33,8 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
 
         <div className={`${className}`}>
           <div className="flex items-center gap-2 py-2">
-            <span className="text-red">${discount}</span>
-            <del className={`text-gray-400 ${priceCss}`}>${price}</del>
+            <span className="text-red">${discountPrice}</span>
+            <del className={`text-gray-400 ${priceCss}`}>${previousPrice}</del>
           </div>
 
           <div className="flex items-center gap-2">

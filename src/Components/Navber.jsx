@@ -6,6 +6,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { HiXMark } from "react-icons/hi2";
 import { HiBars3 } from "react-icons/hi2";
+import { NavLink } from "react-router-dom";
 
 export const Navber = () => {
 
@@ -17,16 +18,16 @@ export const Navber = () => {
 
         <div className="flex items-center justify-between">
 
-          <div className='font-bold text-2xl font-inter leading-6'>
+          <NavLink to="/" className='font-bold text-2xl font-inter leading-6 cursor-pointer'>
             Exclusive
-          </div>
+          </NavLink >
 
           {/* desktop menu */}
           <Ul className="hidden lg:flex gap-12 text-[16px] font-normal">
-            <li><a className="navber" href="#">Home</a></li>
-            <li><a className="navber" href="#">Contact</a></li>
-            <li><a className="navber" href="#">About</a></li>
-            <li><a className="navber" href="#">Sign Up</a></li>
+            <li><NavLink to="/" className="navber transition-all duration-300 ease-in-out">Home</NavLink ></li>
+            <li><NavLink to="/contact" className="navber transition-all duration-300 ease-in-out">Contact</NavLink ></li>
+            <li><a className="navber transition-all duration-300 ease-in-out" href="#">About</a></li>
+            <li><a className="navber transition-all duration-300 ease-in-out" href="#">Sign Up</a></li>
           </Ul>
 
           <div className="hidden lg:flex items-center gap-6">

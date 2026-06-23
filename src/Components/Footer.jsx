@@ -9,6 +9,7 @@ import { RiLinkedinLine } from "react-icons/ri";
 import qrCode from "../assets/qr-code.png"
 import google from "../assets/google-play.png"
 import appstore from "../assets/appstore.png"
+import { NavLink } from "react-router-dom";
 
 
 export const Footer = () => {
@@ -64,7 +65,7 @@ export const Footer = () => {
                         <li>Privacy Policy</li>
                         <li>Terms Of Use</li>
                         <li>FAQ</li>
-                        <li>Contact</li>
+                        <li><NavLink to="/contact" className="transition-all duration-300 ease-in-out">Contact</NavLink ></li>
                     </ul>
                 </div>
                 <div>

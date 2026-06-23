@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from './Container/Container'
+import { NavLink } from "react-router-dom";
 
 export const Header = ({className}) => {
   return (
@@ -13,9 +14,9 @@ export const Header = ({className}) => {
           <div className="text-center">
             <p>
               Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-              <a href="#" className="font-semibold underline pl-2">
+              <NavLink  to="/shop" className="font-semibold underline pl-2">
                 Shop Now
-              </a>
+              </NavLink >
             </p>
           </div>
 

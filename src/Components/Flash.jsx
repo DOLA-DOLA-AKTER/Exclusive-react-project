@@ -73,14 +73,15 @@ export const Flash = () => {
                 </div>
                 <div className="pb-10 md:pt-15 pt-10">
                     <Slider {...settings}>
-                        <div >
+                        
+                        <div>
                             <Card
                                 img={img1}
                                 img_title='gamepad'
                                 percent='40'
                                 title="HAVIT HV-G92 Gamepad"
-                                discount="120"
-                                price="160"
+                                discountPrice="120"
+                                previousPrice="160"
                                 review='88'
                             >
                                 <FaStar />
@@ -96,9 +97,9 @@ export const Flash = () => {
                                 img_title='keyboard'
                                 percent='32'
                                 title="AK-900 Wired Keyboard"
-                                num="960"
-                                del="1160"
-                                star='75'
+                                discountPrice="960"
+                                previousPrice="1160"
+                                review='75'
                             >
                                 <FaStar />
                                 <FaStar />
@@ -113,9 +114,9 @@ export const Flash = () => {
                                 img_title='monitor'
                                 percent='30'
                                 title="IPS LCD Gaming Monitor"
-                                num="370"
-                                del="400"
-                                star='99'
+                                discountPrice="370"
+                                previousPrice="400"
+                                review='99'
                             >
                                 <FaStar />
                                 <FaStar />
@@ -130,9 +131,9 @@ export const Flash = () => {
                                 img_title='chair'
                                 percent='25'
                                 title="S-Series Comfort Chair "
-                                num="375"
-                                del="400"
-                                star='99'
+                                discountPrice="375"
+                                previousPrice="400"
+                                review='99'
                             >
                                 <FaStar />
                                 <FaStar />
@@ -141,49 +142,16 @@ export const Flash = () => {
                                 <img src={half_star} alt="" />
                             </Card>
                         </div>
-                        <div>
-                            <Card
-                                img={img3}
-                                img_title='monitor'
-                                percent='30'
-                                title="IPS LCD Gaming Monitor"
-                                num="370"
-                                del="400"
-                                star='99'
-                            >
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                            </Card>
-                        </div>
-                        <div>
-                            <Card
-                                img={img4}
-                                img_title='chair'
-                                percent='25'
-                                title="S-Series Comfort Chair "
-                                num="375"
-                                del="400"
-                                star='99'
-                            >
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <img src={half_star} alt="" />
-                            </Card>
-                        </div>
+                        
                         <div>
                             <Card
                                 img={img1}
                                 img_title='gamepad'
                                 percent='40'
                                 title="HAVIT HV-G92 Gamepad"
-                                num="120"
-                                del="160"
-                                star='88'
+                                discountPrice="120"
+                                previousPrice="160"
+                                review='88'
                             >
                                 <FaStar />
                                 <FaStar />
@@ -198,9 +166,9 @@ export const Flash = () => {
                                 img_title='keyboard'
                                 percent='32'
                                 title="AK-900 Wired Keyboard"
-                                num="960"
-                                del="1160"
-                                star='75'
+                                discountPrice="960"
+                                previousPrice="1160"
+                                review='75'
                             >
                                 <FaStar />
                                 <FaStar />
@@ -209,6 +177,41 @@ export const Flash = () => {
                                 <FaStar className='text-gray-300' />
                             </Card>
                         </div>
+                        <div>
+                            <Card
+                                img={img3}
+                                img_title='monitor'
+                                percent='30'
+                                title="IPS LCD Gaming Monitor"
+                                discountPrice="370"
+                                previousPrice="400"
+                                review='99'
+                            >
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                            </Card>
+                        </div>
+                        <div>
+                            <Card
+                                img={img4}
+                                img_title='chair'
+                                percent='25'
+                                title="S-Series Comfort Chair "
+                                discountPrice="375"
+                                previousPrice="400"
+                                review='99'
+                            >
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <img src={half_star} alt="" />
+                            </Card>
+                        </div>
+                        
                     </Slider>
                 </div>
 
