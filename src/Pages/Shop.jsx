@@ -47,10 +47,10 @@ return (
       </div>
       <div className='flex flex-col xl:flex-row xl:gap-11 gap-1 py-5 xl:py-0'>
         <div className='xl:w-[20%] w-full lg:pt-5 pt-5 flex items-center justify-center xl:block'>
-          <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4'>
+          <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4 capitalize'>
             {
               data.map((item) =>{
-                return<li>{item.category}</li>;
+                return<li key={item.id} className='hover:text-red cursor-pointer duration-300'>{item.category}</li>;
               })
             }
             {/* <li><a href="#">Woman’s Fashion</a></li>
