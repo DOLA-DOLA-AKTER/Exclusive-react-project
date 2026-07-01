@@ -66,8 +66,8 @@ export const Paginate = ({ itemsPerPage, allProducts }) => {
                 previousLabel=""
                 renderOnZeroPageCount={null}
                 className='flex gap-2 pt-10'
-                pageClassName='px-6.25 py-0.5 bg-black text-white cursor-pointer hover:opacity-80 duration-300'
-                activeClassName="bg-red"
+                pageLinkClassName='px-6.25 py-1 bg-black text-white cursor-pointer hover:opacity-80 duration-300'
+                activeLinkClassName="bg-red"
             />
         </div>
     )
