@@ -7,12 +7,12 @@ import { BreadCrumb } from '../Components/Container/BreadCrumb'
 import { Paginate } from '../Components/Paginate'
 import { Skeleton } from '../Components/Skeleton'
 import { useDispatch, useSelector } from 'react-redux'
-import { Products } from '../Slices/ProductSlice'
+import { CategorieReducer, Products } from '../Slices/ProductSlice'
 
 
 export const Shop = () => {
 
-  const [allProducts, setAllProducts] = useState([]);
+  // const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showValue, setShowValue] = useState(6);
   const dispatch = useDispatch();
@@ -23,8 +23,16 @@ export const Shop = () => {
     fetch('https://dummyjson.com/products')
       .then((res) => res.json())
       .then((data) => dispatch(Products(data.products)))
-      .then(() => setLoading(false));
+      .then(() => setLoading(false))
+      .then(() => dispatch(Products));
   }, [])
+
+    const uniqueCategory = [...new Set(data.map((item) => item.category ))]
+
+    const handleFilterItem = (id) => {
+      const filterItem = data.filter((categoryItem) => categoryItem.category == id)      
+      dispatch(CategorieReducer(filterItem))
+    }
 
 
 return (
@@ -49,19 +57,13 @@ return (
         <div className='xl:w-[20%] w-full lg:pt-5 pt-5 flex items-center justify-center xl:block'>
           <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4 capitalize'>
             {
-              data.map((item) =>{
-                return<li key={item.id} className='hover:text-red cursor-pointer duration-300'>{item.category}</li>;
+              uniqueCategory.map((item) =>{
+                return<li 
+                key={item.id} 
+                onClick={()=> handleFilterItem(item)} className='hover:text-red cursor-pointer duration-300'>{item}</li>;
               })
             }
-            {/* <li><a href="#">Woman’s Fashion</a></li>
-            <li><a href="#">Men’s Fashion</a></li>
-            <li><a href="#">Electronics</a></li>
-            <li><a href="#">Home & Lifestyle</a></li>
-            <li><a href="#">Medicine</a></li>
-            <li><a href="#">Sports & Outdoor</a></li>
-            <li><a href="#">Baby’s & Toys</a></li>
-            <li><a href="#">Groceries &</a></li>
-            <li><a href="#">Health & Beauty</a></li> */}
+
           </ul>
         </div>
         <div className='xl:w-[80%] w-[95%] lg:pt-5 pt-5'>

@@ -10,13 +10,15 @@ export const ProductSlice = createSlice({
   reducers: {
     Products: (state, action) => {
       state.value = action.payload
-        
     },
+    CategorieReducer : (state, action) => {
+      state.value = action.payload
+    }
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { Products } = ProductSlice.actions
+export const { Products, CategorieReducer } = ProductSlice.actions
 
 export default ProductSlice.reducer

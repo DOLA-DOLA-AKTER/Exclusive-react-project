@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 
 
-export const Paginate = ({ itemsPerPage, allProducts }) => {
+export const Paginate = ({ itemsPerPage }) => {
 
     const data = useSelector((state) => state.allProducts.value)
     const items = data;
