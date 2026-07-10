@@ -28,7 +28,6 @@ export const Shop = () => {
     setLoading(false)
   }
   
-
   useEffect(() => {
    getAlldata()
   }, [])
