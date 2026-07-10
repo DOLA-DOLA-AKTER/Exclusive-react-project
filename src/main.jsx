@@ -9,6 +9,7 @@ import { RootLayout } from './RootLayout';
 import { Contact } from './Pages/Contact';
 import { Provider } from 'react-redux'
 import { store } from '../src/store'
+import { ProductDetails } from './Pages/ProductDetails';
 
 
 const router = createBrowserRouter([
@@ -17,8 +18,9 @@ const router = createBrowserRouter([
     Component: RootLayout,
     children: [
       { index: true, Component: Home },
-      { path: "shop", Component: Shop },
-      { path: "contact", Component: Contact },
+      { path: "Shop", Component: Shop },
+      { path: "Contact", Component: Contact },
+      { path: "ProductDetails/:id", Component: ProductDetails },
       
     ],
   },

@@ -19,6 +19,8 @@ export const Paginate = ({ itemsPerPage }) => {
                 {currentItems &&
                     currentItems.map((item) => (
                         <Card
+                            ProductDetails={item}
+                            id={item.id}
                             key={item.id}
                             img={item.thumbnail}
                             img_title='keyboard'

@@ -12,7 +12,7 @@ export const ProductSlice = createSlice({
       state.value = action.payload
     },
     CategorieReducer : (state, action) => {
-      state.value = action.payload
+      state.value = [...action.payload]
     }
     
   },

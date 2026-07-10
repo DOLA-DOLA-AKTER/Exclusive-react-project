@@ -8,31 +8,41 @@ import { Paginate } from '../Components/Paginate'
 import { Skeleton } from '../Components/Skeleton'
 import { useDispatch, useSelector } from 'react-redux'
 import { CategorieReducer, Products } from '../Slices/ProductSlice'
+import axios from "axios";
 
 
 export const Shop = () => {
 
-  // const [allProducts, setAllProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showValue, setShowValue] = useState(6);
+  const [uniCategory, setUniCategory] = useState([]);
+
   const dispatch = useDispatch();
   const data = useSelector((state) => state.allProducts.value)
+
+  async function getAlldata () {
+    let data = await axios.get('https://dummyjson.com/products')
+    dispatch(Products(data.data.products))
+    setAllProducts(data.data.products)
+    setLoading(false)
+  }
   
 
   useEffect(() => {
-    fetch('https://dummyjson.com/products')
-      .then((res) => res.json())
-      .then((data) => dispatch(Products(data.products)))
-      .then(() => setLoading(false))
-      .then(() => dispatch(Products));
+   getAlldata()
   }, [])
 
+  useEffect(() => {
     const uniqueCategory = [...new Set(data.map((item) => item.category ))]
-
-    const handleFilterItem = (id) => {
-      const filterItem = data.filter((categoryItem) => categoryItem.category == id)      
+    setUniCategory(uniqueCategory)
+  }, [])
+    
+    const handleFilterItem = (item) => {      
+      const filterItem = allProducts.filter((categoryItem) => categoryItem.category == item)  
       dispatch(CategorieReducer(filterItem))
     }
+
 
 
 return (
@@ -56,8 +66,9 @@ return (
       <div className='flex flex-col xl:flex-row xl:gap-11 gap-1 py-5 xl:py-0'>
         <div className='xl:w-[20%] w-full lg:pt-5 pt-5 flex items-center justify-center xl:block'>
           <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4 capitalize'>
+            <li onClick={() => dispatch(Products(allProducts))} className='hover:text-red cursor-pointer duration-300'>All Products</li>
             {
-              uniqueCategory.map((item) =>{
+              uniCategory.map((item) =>{
                 return<li 
                 key={item.id} 
                 onClick={()=> handleFilterItem(item)} className='hover:text-red cursor-pointer duration-300'>{item}</li>;

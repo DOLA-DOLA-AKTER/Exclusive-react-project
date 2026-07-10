@@ -6,7 +6,7 @@ export const Countdown = ({ colon, className, countText, counts }) => {
     let [count, setCount] = useState({});
     let [timeUp, setTimeUp] = useState(false);
 
-    const conduct_date = '2026-07-06 12:00:00';
+    const conduct_date = '2029-04-06 12:00:00';
 
     useEffect(() => {
 

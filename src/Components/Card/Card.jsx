@@ -3,11 +3,21 @@ import img1 from '../../assets/img1.png'
 import { GoHeart } from "react-icons/go";
 import { IoEyeOutline } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
+import { useNavigate } from "react-router";
 
 
-export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss }) => {
+export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss,ProductDetails, id }) => {
+
+  let navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/ProductDetails/${id}`)
+  }
+
+  console.log(ProductDetails);
+
   return (
-    <div className='w-67.5 mx-auto group cursor-pointer'>
+    <div onClick={handleClick} className='w-67.5 mx-auto group cursor-pointer'>
       <div className='relative'>
         <img src={img} alt={img_title} />
 
@@ -23,7 +33,7 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
 
         <div className='group-hover:block hidden duration-300 md:-mt-10 -mt-9 '>
           <button
-            className=' bg-black text-white font-medium rounded-b text-sm md:text-base w-full py-2 cursor-pointer'>Add To Car</button>
+            className=' bg-black text-white font-medium rounded-b text-sm md:text-base w-full py-2 cursor-pointer'>Add To Cart</button>
         </div>
 
       </div>

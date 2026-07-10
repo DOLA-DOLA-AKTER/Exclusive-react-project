@@ -14,7 +14,7 @@ export const Header = ({className}) => {
           <div className="text-center">
             <p>
               Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-              <NavLink  to="/shop" className="font-semibold underline pl-2">
+              <NavLink  to="/Shop" className="font-semibold underline pl-2">
                 Shop Now
               </NavLink >
             </p>
