@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "Shop", Component: Shop },
       { path: "Contact", Component: Contact },
-      { path: "ProductDetails/:id", Component: ProductDetails },
+      { path: `ProductDetails/:id`, Component: ProductDetails },
       
     ],
   },

@@ -9,17 +9,21 @@ import { RedButton } from '../Components/Button/RedButton'
 import { TbTruckDelivery, TbTruckReturn } from 'react-icons/tb'
 import { useParams } from "react-router";
 import axios from 'axios'
+import { Rate } from 'antd';
 
 
 export const ProductDetails = () => {
 
-    const [productData, setProductData] = useState([])
+    const [productData, setProductData] = useState({})
+    const [productImages, setProductImages] = useState([])
+    const [count, setCount] = useState(1)
 
-    let {id} = useParams();
+    let { id } = useParams();
 
     async function getAlldata() {
         let data = await axios.get(`https://dummyjson.com/products/${id}`)
         setProductData(data.data)
+        setProductImages(data.data.images)
     }
 
     useEffect(() => {
@@ -29,34 +33,32 @@ export const ProductDetails = () => {
     return (
         <div>
             <Container>
-                <BreadCrumb />
+                <BreadCrumb
+                    cardtitle={productData.title}
+                />
                 <div className='flex justify-center gap-17.5'>
                     <div className='flex justify-center gap-7.5'>
                         <div className='space-y-4'>
-                            <img src={sotoimg} alt="" />
-                            <img src={sotoimg} alt="" />
-                            <img src={sotoimg} alt="" />
-                            <img src={sotoimg} alt="" />
+                            {productImages.map((item) => {
+                                return <img src={item} alt="Images" className='w-42.5' />
+                            })}
                         </div>
                         <div className='w-125 h-150'>
                             <img src={productData.thumbnail} alt="" className='w-full h-full object-cover' />
                         </div>
                     </div>
                     <div>
-                        <h2 className='text-2xl font-semibold font-inter'>Havic HV G-92 Gamepad</h2>
+                        <h2 className='text-2xl font-semibold font-inter'> {productData?.title} </h2>
                         <div className='py-4 flex items-center gap-3'>
-                            <div className='text-golden flex items-center gap-1'>
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                            </div>
-                            <p className='text-black/60 border-r-2 border-black/60 pr-4 '>(150 Reviews)</p>
-                            <p className='text-green text-sm'>In Stock</p>
+
+                            <Rate allowHalf value={Number(productData?.rating)} />
+                            <p className='text-black/60 border-r-2 border-black/60 pr-4 '>({productData?.reviews?.length || 0} Reviews)</p>
+                            <p className={`text-sm font-medium ${productData?.availabilityStatus === "In Stock" ? "text-green" : "text-red-600"}`}>
+                                {productData?.availabilityStatus}
+                            </p>
                         </div>
-                        <h3 className='text-2xl'>$192.00</h3>
-                        <p className='text-sm py-6 border-b border-black/60 w-93.25'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</p>
+                        <h3 className='text-2xl'>${productData.price}</h3>
+                        <p className='text-sm py-6 border-b border-black/60 w-93.25'> {productData.description} </p>
                         <div className='flex items-center gap-2 py-6'>
                             <p className='pr-4'>Colours:</p>
                             <span className='w-4.5 h-4.5 rounded-full bg-[#A0BCE0] border-2 border-white outline-2 outline-black'></span>
@@ -74,14 +76,19 @@ export const ProductDetails = () => {
                             </div>
 
                         </div>
-                        <div className='flex items-center gap-4 pt-6 pb-10'>
+                        <div className='flex items-center gap-4 py-6'>
                             <div className='border rounded-md flex items-center text-xl font-medium'>
-                                <p className='py-2 px-2.5 cursor-pointer hover:bg-red hover:text-white duration-300 border-r hover:rounded-l-md'>-</p>
-                                <p className='px-7'>2</p>
-                                <p className='py-2 px-2.5 cursor-pointer hover:bg-red hover:text-white duration-300 border-l hover:rounded-r-md'>+</p>
+                                <button onClick={() => {
+                                    if (count > 1) {
+                                        setCount(count - 1);
+                                    }
+                                }}
+                                    className='py-2 px-2.5 cursor-pointer hover:bg-red hover:text-white duration-300 border-r hover:rounded-l-md'>-</button>
+                                <span className='w-15 text-center'> {count} </span>
+                                <button onClick={() => setCount(count + 1)} className='py-2 px-2.5 cursor-pointer hover:bg-red hover:text-white duration-300 border-l hover:rounded-r-md'>+</button>
                             </div>
                             <RedButton>Buy Now</RedButton>
-                            <div className='w-10 h-10 flex items-center justify-center border rounded-md text-2xl cursor-pointer'><IoIosHeartEmpty /></div>
+                            <div className='w-12 h-12 flex items-center justify-center border rounded-md text-2xl cursor-pointer hover:bg-red hover:text-white duration-300 hover:border-none'><IoIosHeartEmpty /></div>
                         </div>
                         <div className='border rounded-md'>
                             <div className='flex items-center gap-4 pl-4 pt-5 pb-4 border-b'>

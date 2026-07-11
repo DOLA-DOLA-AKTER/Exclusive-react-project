@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router'
 
 
-export const BreadCrumb = () => {
+export const BreadCrumb = ({cardtitle}) => {
 
     let {pathname} = useLocation()
 
@@ -13,6 +13,7 @@ export const BreadCrumb = () => {
         <h2>Home</h2>
         <h2>/</h2>
         <h2>{PathLocation}</h2>
+        <h2 className='text-black/80 capitalize'>{cardtitle}</h2>
     </div>
   )
 }

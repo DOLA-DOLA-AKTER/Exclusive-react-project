@@ -11,8 +11,8 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
   let navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/ProductDetails/${id}`)
-  }
+    navigate(`/ProductDetails/${id}`);
+  };
 
   console.log(ProductDetails);
 
