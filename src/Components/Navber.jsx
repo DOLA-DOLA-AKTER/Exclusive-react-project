@@ -31,7 +31,7 @@ export const Navber = () => {
           </Ul>
 
           <div className="hidden lg:flex items-center gap-6">
-            <div className='bg-[#F5F5F5] w-60.75 h-9.5 rounded-sm flex items-center gap-2 px-4'>
+            <div className='bg-[#F5F5F5] w-65 h-9.5 rounded-sm flex items-center gap-2 px-4'>
               <input
                 type="text"
                 placeholder="What are you looking for?"

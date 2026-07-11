@@ -5,10 +5,10 @@ import { FaStar } from 'react-icons/fa'
 import img2 from '../assets/img2.png'
 import { BreadCrumb } from '../Components/Container/BreadCrumb'
 import { Paginate } from '../Components/Paginate'
-import { Skeleton } from '../Components/Skeleton'
 import { useDispatch, useSelector } from 'react-redux'
 import { CategorieReducer, Products } from '../Slices/ProductSlice'
 import axios from "axios";
+import { Skeleton } from '../Components/Skeleton/Skeleton'
 
 
 export const Shop = () => {
@@ -98,3 +98,4 @@ return (
   </div>
 )
 }
+
