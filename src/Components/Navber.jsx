@@ -26,7 +26,7 @@ export const Navber = () => {
           <Ul className="hidden lg:flex gap-12 text-[16px] font-normal">
             <li><NavLink to="/" className="navber transition-all duration-300 ease-in-out">Home</NavLink ></li>
             <li><NavLink to="/Contact" className="navber transition-all duration-300 ease-in-out">Contact</NavLink ></li>
-            <li><a className="navber transition-all duration-300 ease-in-out" href="#">About</a></li>
+            <li><NavLink to="/" className="navber transition-all duration-300 ease-in-out" href="#">About</NavLink></li>
             <li><a className="navber transition-all duration-300 ease-in-out" href="#">Sign Up</a></li>
           </Ul>
 
