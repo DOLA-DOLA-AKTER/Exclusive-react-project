@@ -22,6 +22,7 @@ export const Paginate = ({ itemsPerPage }) => {
                             ProductDetails={item}
                             id={item.id}
                             key={item.id}
+                            productDetails={item}
                             img={item.thumbnail}
                             img_title='keyboard'
                             percent={item.discountPercentage}

@@ -27,7 +27,7 @@ export const Services = () => {
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-22 text-center">
                     {services.map((service, index) => (
-                        <div key={index}>
+                        <div key={index} className='shadow-md rounded-2xl px-5 py-7 hover:shadow-2xl duration-300'>
                             <div className='w-19 h-19 bg-black rounded-full text-FAFAFA flex items-center justify-center mx-auto text-[40px] outline-10 outline-black/30'>
                                 {service.icon}
                             </div>

@@ -1,30 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import { Home } from './Pages/Home'
-import { Shop } from './Pages/Shop';
-import { RootLayout } from './RootLayout';
-import { Contact } from './Pages/Contact';
 import { Provider } from 'react-redux'
 import { store } from '../src/store'
-import { ProductDetails } from './Pages/ProductDetails';
+import { router } from '../src/Router';
 
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: RootLayout,
-    children: [
-      { index: true, Component: Home },
-      { path: "Shop", Component: Shop },
-      { path: "Contact", Component: Contact },
-      { path: `ProductDetails/:id`, Component: ProductDetails },
-      
-    ],
-  },
-]);
 
 
 createRoot(document.getElementById('root')).render(

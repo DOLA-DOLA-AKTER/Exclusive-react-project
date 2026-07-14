@@ -17,6 +17,7 @@ export const Shop = () => {
   const [loading, setLoading] = useState(true);
   const [showValue, setShowValue] = useState(6);
   const [uniCategory, setUniCategory] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("All Products");
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state.allProducts.value)
@@ -65,15 +66,21 @@ return (
       <div className='flex flex-col xl:flex-row xl:gap-11 gap-1 py-5 xl:py-0'>
         <div className='xl:w-[20%] w-full lg:pt-5 pt-5 flex items-center justify-center xl:block'>
           <ul className='md:text-base text-sm xl:leading-6 leading-4 font-normal flex flex-col space-y-4 mr-4 capitalize'>
-            <li onClick={() => dispatch(Products(allProducts))} className='hover:text-red cursor-pointer duration-300'>All Products</li>
+            <li onClick={() => {
+              dispatch(Products(allProducts));
+              setActiveCategory("All Products");
+            }} 
+            className={`hover:text-red cursor-pointer duration-300 ${activeCategory === "All Products" ? "text-red font-semibold" : ""}`}>All Products</li>
             {
               uniCategory.map((item) =>{
                 return<li 
-                key={item.id} 
-                onClick={()=> handleFilterItem(item)} className='hover:text-red cursor-pointer duration-300'>{item}</li>;
+                key={item} 
+                onClick={()=> {
+                  handleFilterItem(item);
+                  setActiveCategory(item);
+                }} className={`hover:text-red cursor-pointer duration-300 ${activeCategory  === item ? "text-red font-semibold" : ""}`}>{item}</li>;
               })
             }
-
           </ul>
         </div>
         <div className='xl:w-[80%] w-[95%] lg:pt-5 pt-5'>

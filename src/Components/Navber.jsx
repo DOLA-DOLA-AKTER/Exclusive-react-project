@@ -6,9 +6,14 @@ import { IoCartOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { HiXMark } from "react-icons/hi2";
 import { HiBars3 } from "react-icons/hi2";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 export const Navber = () => {
+
+  const data = useSelector((state) => state.allProducts.cart)
+
+  const navigate = useNavigate()
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -42,7 +47,14 @@ export const Navber = () => {
 
             <div className="flex items-center gap-4 text-2xl">
               <GoHeart />
-              <IoCartOutline />
+              <div
+              onClick={() => navigate("/Cart")} 
+              className="relative cursor-pointer">
+                <IoCartOutline />
+                <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-red text-white text-xs flex items-center justify-center">
+                  {data.length}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -50,7 +62,7 @@ export const Navber = () => {
           <button
             onClick={() => setShowMenu(!showMenu)}
             className='lg:hidden text-3xl'>
-            {showMenu ? <HiXMark className='cursor-pointer'/> : <HiBars3 className='cursor-pointer'/>}
+            {showMenu ? <HiXMark className='cursor-pointer' /> : <HiBars3 className='cursor-pointer' />}
           </button>
 
         </div>

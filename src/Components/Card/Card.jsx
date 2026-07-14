@@ -4,9 +4,11 @@ import { GoHeart } from "react-icons/go";
 import { IoEyeOutline } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 import { useNavigate } from "react-router";
+import { useDispatch } from 'react-redux';
+import { CartReducer } from '../../Slices/ProductSlice';
 
 
-export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss,ProductDetails, id }) => {
+export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss,ProductDetails, id, productDetails }) => {
 
   let navigate = useNavigate();
 
@@ -14,12 +16,19 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
     navigate(`/ProductDetails/${id}`);
   };
 
-  console.log(ProductDetails);
+  const dispatch = useDispatch();
+  const handleCart = () => {
+    dispatch(CartReducer(productDetails))
+  }
+
 
   return (
-    <div onClick={handleClick} className='w-67.5 mx-auto group cursor-pointer'>
+    <div className='w-67.5 mx-auto group cursor-pointer'>
       <div className='relative'>
-        <img src={img} alt={img_title} />
+        <img onClick={handleClick}
+         src={img}
+         alt={img_title} 
+         />
 
         <div className='absolute top-0 left-0 flex justify-between w-full px-3 pt-3'>
           <div>
@@ -33,6 +42,7 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
 
         <div className='group-hover:block hidden duration-300 md:-mt-10 -mt-9 '>
           <button
+            onClick={handleCart}
             className=' bg-black text-white font-medium rounded-b text-sm md:text-base w-full py-2 cursor-pointer'>Add To Cart</button>
         </div>
 
