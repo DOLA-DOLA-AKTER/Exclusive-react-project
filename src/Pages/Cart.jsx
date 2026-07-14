@@ -28,7 +28,7 @@ export const Cart = () => {
                             imgTitle={item.title}
                             title={item.title}
                             price={item.price}
-                            // quantity=''
+                            quantity={item.price}
                             subTotal={item.price}
                         />
                     </div>
