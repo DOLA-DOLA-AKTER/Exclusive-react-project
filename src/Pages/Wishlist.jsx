@@ -15,11 +15,15 @@ export const Wishlist = () => {
 
     const wishlistData = useSelector((state) => state.allProducts.wishlist);
 
+
     return (
         <section>
             <Container>
                 <div className='flex items-center justify-between'>
-                    <BreadCrumb />
+                    <BreadCrumb 
+                    className='text-black'
+                    cardtitle={`(${wishlistData.length})`}
+                    />
                     <RedButton className='bg-white! text-black! border border-gray'>Move All To Bag</RedButton>
                 </div>
                 <div className='md:pt-15 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center gap-7.5'>

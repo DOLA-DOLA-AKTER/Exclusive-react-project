@@ -14,6 +14,7 @@ export const Navber = () => {
   const data = useSelector((state) => state.allProducts.cart)
 
   const wishlistData = useSelector((state) => state.allProducts.wishlist);
+  
 
   const navigate = useNavigate()
 
