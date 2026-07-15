@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img1 from '../../assets/img1.png'
 import { GoHeart } from "react-icons/go";
 import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 import { useNavigate } from "react-router";
 import { useDispatch } from 'react-redux';
-import { CartReducer } from '../../Slices/ProductSlice';
+import { CartReducer, WishlistReducer } from '../../Slices/ProductSlice';
 import { RiDeleteBinLine } from 'react-icons/ri';
 
 
@@ -18,11 +18,16 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
   };
 
   const dispatch = useDispatch();
+  
   const handleCart = () => {
     dispatch(CartReducer(productDetails))
-  }
-
-
+  };
+  
+  const handleHeart = () => {
+    dispatch(WishlistReducer(productDetails))
+  };
+  
+  
   return (
     <div className='w-67.5 mx-auto group cursor-pointer'>
       <div className='relative'>
@@ -37,7 +42,9 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
           </div>
           <div className='space-y-2'>
             <RiDeleteBinLine className={`hidden text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${delettIconCss}`}/>
-            <GoHeart className={`text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${heartIconCss}`} />
+            <GoHeart
+             onClick={handleHeart}
+             className={`text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${heartIconCss}`} />
             <IoEyeOutline className={`text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${eyeIconCss}`} />
           </div>
         </div>

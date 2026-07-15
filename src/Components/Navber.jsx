@@ -13,6 +13,8 @@ export const Navber = () => {
 
   const data = useSelector((state) => state.allProducts.cart)
 
+  const wishlistData = useSelector((state) => state.allProducts.wishlist);
+
   const navigate = useNavigate()
 
   const [showMenu, setShowMenu] = useState(false);
@@ -46,10 +48,15 @@ export const Navber = () => {
             </div>
 
             <div className="flex items-center gap-4 text-2xl">
-              <GoHeart
-                className='cursor-pointer'
-                onClick={() => navigate("/Wishlist")}
-                />
+              <div
+              onClick={() => navigate("/Wishlist")} 
+              className="relative cursor-pointer">
+                <GoHeart/>
+                <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-red text-white text-xs flex items-center justify-center">
+                  {wishlistData.length}
+                </span>
+              </div>
+
               <div
               onClick={() => navigate("/Cart")} 
               className="relative cursor-pointer">

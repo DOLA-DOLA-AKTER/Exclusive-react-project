@@ -9,10 +9,12 @@ import cooler from '../assets/cooler.png'
 import bookSelf from '../assets/book-self.png'
 import { FaStar } from "react-icons/fa";
 import { Heading } from '../Components/Heading'
-
-
+import { useSelector } from 'react-redux'
 
 export const Wishlist = () => {
+
+    const wishlistData = useSelector((state) => state.allProducts.wishlist);
+
     return (
         <section>
             <Container>
