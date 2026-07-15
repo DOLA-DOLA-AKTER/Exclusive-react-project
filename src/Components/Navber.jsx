@@ -46,7 +46,10 @@ export const Navber = () => {
             </div>
 
             <div className="flex items-center gap-4 text-2xl">
-              <GoHeart />
+              <GoHeart
+                className='cursor-pointer'
+                onClick={() => navigate("/Wishlist")}
+                />
               <div
               onClick={() => navigate("/Cart")} 
               className="relative cursor-pointer">

@@ -1,14 +1,15 @@
 import React from 'react'
 import img1 from '../../assets/img1.png'
 import { GoHeart } from "react-icons/go";
-import { IoEyeOutline } from "react-icons/io5";
+import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 import { useNavigate } from "react-router";
 import { useDispatch } from 'react-redux';
 import { CartReducer } from '../../Slices/ProductSlice';
+import { RiDeleteBinLine } from 'react-icons/ri';
 
 
-export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss,ProductDetails, id, productDetails }) => {
+export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss,ProductDetails, id, productDetails, reviewCSS, cartCss, eyeIconCss, heartIconCss, delettIconCss }) => {
 
   let navigate = useNavigate();
 
@@ -35,15 +36,22 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
             <p className={`text-white text-xs font-normal leading-4.5 bg-red rounded py-1 px-3 ${percentCss}`}>-{percent}%</p>
           </div>
           <div className='space-y-2'>
-            <GoHeart className='text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110' />
-            <IoEyeOutline className='text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110' />
+            <RiDeleteBinLine className={`hidden text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${delettIconCss}`}/>
+            <GoHeart className={`text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${heartIconCss}`} />
+            <IoEyeOutline className={`text-3xl p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${eyeIconCss}`} />
           </div>
         </div>
 
-        <div className='group-hover:block hidden duration-300 md:-mt-10 -mt-9 '>
+        <div onClick={handleCart} className={`absolute w-full group-hover:block hidden duration-300 md:-mt-10 -mt-9 ${cartCss}`}>
           <button
-            onClick={handleCart}
-            className=' bg-black text-white font-medium rounded-b text-sm md:text-base w-full py-2 cursor-pointer'>Add To Cart</button>
+            
+            className=' w-full py-2 bg-black text-white rounded-b
+            flex items-center justify-center gap-2
+            text-sm md:text-base font-medium cursor-pointer
+            hover:bg-orange duration-300'>
+            <IoCartOutline className="text-lg"/> 
+            <span>Add To Cart</span> 
+            </button>
         </div>
 
       </div>
@@ -61,7 +69,7 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
             <div className="flex gap-1 text-golden text-[20px]">
               {children}
             </div>
-            <p className="text-gray-400 text-[14px] font-semibold">({review})</p>
+            <p className={`text-gray-400 text-[14px] font-semibold ${reviewCSS}`}>({review})</p>
           </div>
         </div>
       </div>
