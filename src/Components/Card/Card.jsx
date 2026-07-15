@@ -11,7 +11,7 @@ import { FaHeart } from 'react-icons/fa';
 import { IoIosHeart } from 'react-icons/io';
 
 
-export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss, ProductDetails, id, productDetails, reviewCSS, cartCss, eyeIconCss, heartIconCss, delettIconCss }) => {
+export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss, ProductDetails, id, productDetails, reviewCSS, cartCss, eyeIconCss, heartIconCss, delettIconCss, cartIcon }) => {
 
   let navigate = useNavigate();
 
@@ -63,14 +63,12 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
           </div>
         </div>
 
-        <div onClick={handleCart} className={`absolute w-full group-hover:block hidden duration-300 md:-mt-10 -mt-9 ${cartCss}`}>
+        <div className={`absolute w-full group-hover:block hidden duration-300 md:-mt-10 -mt-9 ${cartCss}`}>
           <button
-
-            className=' w-full py-2 bg-black text-white rounded-b
-            flex items-center justify-center gap-2
-            text-sm md:text-base font-medium cursor-pointer
-            hover:bg-orange duration-300'>
-            <IoCartOutline className="text-lg" />
+            onClick={handleCart}
+            className="w-full py-2 bg-black text-white rounded-b flex items-center justify-center gap-2 text-sm md:text-base font-medium cursor-pointer hover:bg-orange duration-300"
+          >
+            <IoCartOutline className={`text-lg hidden ${cartIcon}`} />
             <span>Add To Cart</span>
           </button>
         </div>

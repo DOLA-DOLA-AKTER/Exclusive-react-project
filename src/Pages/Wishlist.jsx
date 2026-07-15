@@ -41,6 +41,7 @@ export const Wishlist = () => {
                             eyeIconCss='hidden'
                             heartIconCss='hidden'
                             delettIconCss='block!'
+                            cartIcon="block!"
                         />
                     </div>
                     <div>
@@ -57,6 +58,7 @@ export const Wishlist = () => {
                             eyeIconCss='hidden'
                             heartIconCss='hidden'
                             delettIconCss='block!'
+                            cartIcon="block!"
                         />
 
                     </div>
@@ -74,6 +76,7 @@ export const Wishlist = () => {
                             eyeIconCss='hidden'
                             heartIconCss='hidden'
                             delettIconCss='block!'
+                            cartIcon="block!"
                         />
 
                     </div>
@@ -91,6 +94,7 @@ export const Wishlist = () => {
                             eyeIconCss='hidden'
                             heartIconCss='hidden'
                             delettIconCss='block!'
+                            cartIcon="block!"
                         />
 
                     </div>
@@ -112,6 +116,7 @@ export const Wishlist = () => {
                                 discountPrice='260'
                                 previousPrice='360'
                                 percent='37'
+                                cartIcon="block!"
                                 percentCss='hidden group-hover:block'
                                 review='85'
                                 cartCss="block!"
@@ -136,6 +141,7 @@ export const Wishlist = () => {
                                 review='85'
                                 cartCss="block!"
                                 heartIconCss='hidden'
+                                cartIcon="block!"
                             >
                                 <FaStar/>
                                 <FaStar/>
@@ -157,6 +163,7 @@ export const Wishlist = () => {
                                 review='65'
                                 cartCss="block!"
                                 heartIconCss='hidden'
+                                cartIcon="block!"
                             >
                                 <FaStar/>
                                 <FaStar/>
@@ -178,6 +185,7 @@ export const Wishlist = () => {
                                 review='65'
                                 cartCss="block!"
                                 heartIconCss='hidden'
+                                cartIcon="block!"
                             >
                                 <FaStar/>
                                 <FaStar/>
