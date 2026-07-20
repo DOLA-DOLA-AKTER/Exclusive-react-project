@@ -4,7 +4,7 @@ import { GoHeart } from "react-icons/go";
 import { IoCartOutline, IoEyeOutline, IoHeart } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 import { useNavigate } from "react-router";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CartReducer, RemoveWishlist, WishlistReducer } from '../../Slices/ProductSlice';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { FaHeart } from 'react-icons/fa';
@@ -15,52 +15,30 @@ import { IoIosHeart } from 'react-icons/io';
 export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss, ProductDetails, id, productDetails, reviewCSS, cartCss, eyeIconCss, heartIconCss, delettIconCss, cartIcon }) => {
 
   let navigate = useNavigate();
-
-//   const notify = () => {
-//     matchitem ? 
-//     toast.success('Product added to cart successfully!', {
-//     position: "top-right",
-//     autoClose: 5000,
-//     hideProgressBar: false,
-//     closeOnClick: false,
-//     pauseOnHover: true,
-//     draggable: true,
-//     progress: undefined,
-//     theme: "light",
-//     transition: Bounce,
-//   })
-//   :
-//     toast.warn('🦄 Wow so easy!', {
-//     position: "top-right",
-//     autoClose: 5000,
-//     hideProgressBar: false,
-//     closeOnClick: false,
-//     pauseOnHover: true,
-//     draggable: true,
-//     progress: undefined,
-//     theme: "light",
-//     transition: Bounce,
-//     })
-// };
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     navigate(`/ProductDetails/${id}`);
   };
 
-  const dispatch = useDispatch();
+  // Cart Functionality
 
   const handleCart = () => {
     dispatch(CartReducer(productDetails))
-    // notify()
   };
 
-  const [isLiked, setIsLiked] = useState(false);
+  // Wishlist Heart Functionality
+
+  const wishlist = useSelector((state) => state.allProducts.wishlist);
+
+  const isLiked = wishlist.find((item) => item.id === id);
 
   const handleHeart = () => {
     if (!isLiked) {
       dispatch(WishlistReducer(productDetails));
+    } else {
+      dispatch(RemoveWishlist(id));
     }
-    setIsLiked(!isLiked);
   };
 
 
@@ -84,7 +62,7 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
 
             <div onClick={handleHeart}>
               {isLiked ?
-                <IoHeart className={`p-1.25 bg-white rounded-full transition text-red hover:scale-110`} />
+                <IoHeart className={`p-1.25 bg-white rounded-full transition text-red hover:scale-110 ${heartIconCss}`} />
                 :
                 <GoHeart
                   className={`p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${heartIconCss}`} />

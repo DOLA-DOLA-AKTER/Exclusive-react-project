@@ -55,7 +55,7 @@ return (
         <h3 className='font-bold text-xl text-black26'>Shop by Category</h3>
         <div className='space-x-3'>
           <span>Show : </span>
-          <select onChange={(e)=> setShowValue(e.target.value)} name="" id="" className='border border-[#D9D9D9] rounded-md py-1 px-10 focus:outline-none'>
+          <select onChange={(e)=> setShowValue(Number(e.target.value))} name="" id="" className='border border-[#D9D9D9] rounded-md py-1 px-10 focus:outline-none'>
             <option value="6">6</option>
             <option value="9">9</option>
             <option value="12">12</option>
