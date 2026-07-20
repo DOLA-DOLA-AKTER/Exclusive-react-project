@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa'
 import { IoIosHeartEmpty } from 'react-icons/io'
 import { RedButton } from '../Components/Button/RedButton'
 import { TbTruckDelivery, TbTruckReturn } from 'react-icons/tb'
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import axios from 'axios'
 import { Rate } from 'antd';
 import { DetailsSkeleton } from '../Components/Skeleton/DetailsSkeleton'
@@ -13,6 +13,8 @@ import { RelatedItem } from '../Components/RelatedItem'
 
 
 export const ProductDetails = () => {
+
+    const navigate = useNavigate();
 
     const [productData, setProductData] = useState({})
     const [productImages, setProductImages] = useState([])
@@ -96,7 +98,9 @@ export const ProductDetails = () => {
                                         <span className='w-15 text-center'> {count} </span>
                                         <button onClick={() => setCount(count + 1)} className='py-2 px-2.5 cursor-pointer hover:bg-red hover:text-white duration-300 border-l hover:rounded-r-md'>+</button>
                                     </div>
-                                    <RedButton>Buy Now</RedButton>
+                                    <div onClick={() => navigate("/Cart")}>
+                                        <RedButton>Buy Now</RedButton>
+                                    </div>
                                     <div className='w-12 h-12 flex items-center justify-center border rounded-md text-2xl cursor-pointer hover:bg-red hover:text-white duration-300 hover:border-none'><IoIosHeartEmpty /></div>
                                 </div>
                                 <div className='border rounded-md'>
