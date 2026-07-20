@@ -11,7 +11,6 @@ export const Cart = () => {
 
     const data = useSelector((state) => state.allProducts.cart);
 
-
     return (
         <div>
             <Container>
@@ -26,8 +25,9 @@ export const Cart = () => {
                         <h5 className='text-base'>Subtotal</h5>
                     </div>
                     {data.map((item) => {
-                        return <div key={item}>
+                        return <div key={item.id}>
                         <CartItem
+                            id={item.id}
                             ImgSrc={item.thumbnail}
                             imgTitle={item.title}
                             title={item.title}

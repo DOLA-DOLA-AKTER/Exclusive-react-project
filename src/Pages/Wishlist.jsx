@@ -9,95 +9,42 @@ import cooler from '../assets/cooler.png'
 import bookSelf from '../assets/book-self.png'
 import { FaStar } from "react-icons/fa";
 import { Heading } from '../Components/Heading'
-import { useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 
 export const Wishlist = () => {
 
     const wishlistData = useSelector((state) => state.allProducts.wishlist);
 
-
     return (
         <section>
             <Container>
                 <div className='flex items-center justify-between'>
-                    <BreadCrumb 
-                    className='text-black'
-                    cardtitle={`(${wishlistData.length})`}
+                    <BreadCrumb
+                        className='text-black'
+                        cardtitle={`(${wishlistData.length})`}
                     />
                     <RedButton className='bg-white! text-black! border border-gray'>Move All To Bag</RedButton>
                 </div>
-                <div className='md:pt-15 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-center gap-7.5'>
-                    <div>
-                        <Card
-                            img={coat}
-                            img_title="coat"
-                            title='The north coat'
-                            discountPrice='260'
-                            previousPrice='360'
-                            percent='37'
-                            percentCss='hidden group-hover:block'
-                            reviewCSS='hidden'
-                            cartCss="block!"
-                            eyeIconCss='hidden'
-                            heartIconCss='hidden'
-                            delettIconCss='block!'
-                            cartIcon="block!"
-                        />
-                    </div>
-                    <div>
-                        <Card
-                            img={bag}
-                            img_title="bag"
-                            title='Gucci duffle bag'
-                            discountPrice='960'
-                            previousPrice='1160'
-                            percent='37'
-                            percentCss='hidden group-hover:block'
-                            reviewCSS='hidden'
-                            cartCss="block!"
-                            eyeIconCss='hidden'
-                            heartIconCss='hidden'
-                            delettIconCss='block!'
-                            cartIcon="block!"
-                        />
-
-                    </div>
-                    <div>
-                        <Card
-                            img={cooler}
-                            img_title="cooler"
-                            title='RGB liquid CPU Cooler'
-                            discountPrice='160'
-                            previousPrice='170'
-                            percent='37'
-                            percentCss='hidden group-hover:block'
-                            reviewCSS='hidden'
-                            cartCss="block!"
-                            eyeIconCss='hidden'
-                            heartIconCss='hidden'
-                            delettIconCss='block!'
-                            cartIcon="block!"
-                        />
-
-                    </div>
-                    <div>
-                        <Card
-                            img={bookSelf}
-                            img_title="bookSelf"
-                            title='Small BookSelf'
-                            discountPrice='360'
-                            priceCss='hidden'
-                            percent='37'
-                            percentCss='hidden group-hover:block'
-                            reviewCSS='hidden'
-                            cartCss="block!"
-                            eyeIconCss='hidden'
-                            heartIconCss='hidden'
-                            delettIconCss='block!'
-                            cartIcon="block!"
-                        />
-
-                    </div>
+                <div className='md:pt-15 pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-center justify-between gap-7.5'>
+                    {wishlistData.map((item) => {
+                        return <div key={item.id}>
+                            <Card
+                                id={item.id}
+                                img={item.thumbnail}
+                                percent={item.discountPercentage}
+                                title={item.title}
+                                discountPrice={item.price}
+                                previousPrice={(item.price / (1 - item.price / 100)).toFixed(2)}
+                                percentCss='hidden group-hover:block'
+                                reviewCSS='hidden'
+                                cartCss="block!"
+                                eyeIconCss='hidden'
+                                heartIconCss='hidden'
+                                delettIconCss='block!'
+                                cartIcon="block!"
+                            />
+                        </div>
+                    })}
                 </div>
                 <div className='pt-20'>
                     <div className='flex items-center justify-between'>
@@ -122,11 +69,11 @@ export const Wishlist = () => {
                                 cartCss="block!"
                                 heartIconCss='hidden'
                             >
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
                             </Card>
                         </div>
                         <div>
@@ -143,11 +90,11 @@ export const Wishlist = () => {
                                 heartIconCss='hidden'
                                 cartIcon="block!"
                             >
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
                             </Card>
 
                         </div>
@@ -165,11 +112,11 @@ export const Wishlist = () => {
                                 heartIconCss='hidden'
                                 cartIcon="block!"
                             >
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
                             </Card>
 
                         </div>
@@ -185,13 +132,12 @@ export const Wishlist = () => {
                                 review='65'
                                 cartCss="block!"
                                 heartIconCss='hidden'
-                                cartIcon="block!"
-                            >
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
-                                <FaStar/>
+                                cartIcon="block!">
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
+                                <FaStar />
                             </Card>
 
                         </div>

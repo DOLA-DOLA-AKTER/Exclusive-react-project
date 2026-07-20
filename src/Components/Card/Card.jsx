@@ -5,15 +5,43 @@ import { IoCartOutline, IoEyeOutline, IoHeart } from "react-icons/io5";
 import { RedButton } from '../Button/RedButton';
 import { useNavigate } from "react-router";
 import { useDispatch } from 'react-redux';
-import { CartReducer, WishlistReducer } from '../../Slices/ProductSlice';
+import { CartReducer, RemoveWishlist, WishlistReducer } from '../../Slices/ProductSlice';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { FaHeart } from 'react-icons/fa';
 import { IoIosHeart } from 'react-icons/io';
+// import { toast, Bounce } from 'react-toastify';
 
 
 export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss, ProductDetails, id, productDetails, reviewCSS, cartCss, eyeIconCss, heartIconCss, delettIconCss, cartIcon }) => {
 
   let navigate = useNavigate();
+
+//   const notify = () => {
+//     matchitem ? 
+//     toast.success('Product added to cart successfully!', {
+//     position: "top-right",
+//     autoClose: 5000,
+//     hideProgressBar: false,
+//     closeOnClick: false,
+//     pauseOnHover: true,
+//     draggable: true,
+//     progress: undefined,
+//     theme: "light",
+//     transition: Bounce,
+//   })
+//   :
+//     toast.warn('🦄 Wow so easy!', {
+//     position: "top-right",
+//     autoClose: 5000,
+//     hideProgressBar: false,
+//     closeOnClick: false,
+//     pauseOnHover: true,
+//     draggable: true,
+//     progress: undefined,
+//     theme: "light",
+//     transition: Bounce,
+//     })
+// };
 
   const handleClick = () => {
     navigate(`/ProductDetails/${id}`);
@@ -23,6 +51,7 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
 
   const handleCart = () => {
     dispatch(CartReducer(productDetails))
+    // notify()
   };
 
   const [isLiked, setIsLiked] = useState(false);
@@ -48,7 +77,10 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
             <p className={`text-white text-xs font-normal leading-4.5 bg-red rounded py-1 px-3 ${percentCss}`}>-{percent}%</p>
           </div>
           <div className='space-y-2 text-3xl'>
-            <RiDeleteBinLine className={`hidden p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${delettIconCss}`} />
+            <RiDeleteBinLine 
+              onClick={()=> dispatch(RemoveWishlist(id))} 
+              className={`hidden p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${delettIconCss}`} 
+            />
 
             <div onClick={handleHeart}>
               {isLiked ?

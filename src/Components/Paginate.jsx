@@ -28,7 +28,7 @@ export const Paginate = ({ itemsPerPage }) => {
                             percent={item.discountPercentage}
                             title={item.title}
                             discountPrice={item.price}
-                            previousPrice={item.price / (1 - item.price / 100).toFixed(0,2)}
+                            previousPrice={(item.price / (1 - item.price / 100)).toFixed(2)}
                             review={item.reviews.length}
                         >
                             <FaStar />
