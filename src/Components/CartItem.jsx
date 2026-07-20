@@ -2,17 +2,24 @@ import React from 'react'
 import { IoMdClose } from 'react-icons/io'
 import { useDispatch } from 'react-redux'
 import { RemoveReducer } from '../Slices/ProductSlice'
+import { toast } from "react-toastify";
 
 export const CartItem = ({ ImgSrc, imgTitle, title, price, quantity, subTotal, id }) => {
 
-  let dispatch = useDispatch()
+  let dispatch = useDispatch();
+
+  const cartRemove = () => toast.info("Product removed from cart!");
+
 
   return (
     <div>
         <div className='flex items-center py-6 px-10 rounded-md shadow-sm'>
             <div className='relative flex items-center gap-5 text-base w-86.5'>
                 <span
-                 onClick={()=> dispatch(RemoveReducer(id))}
+                 onClick={()=> {
+                  dispatch(RemoveReducer(id));
+                  cartRemove();
+                 }}
                  className="absolute -top-2 -left-2 w-5 h-5 rounded-full bg-red text-white text-xs flex items-center justify-center cursor-pointer">
                   <IoMdClose/>
                 </span>

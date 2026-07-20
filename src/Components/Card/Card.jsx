@@ -9,10 +9,12 @@ import { CartReducer, RemoveWishlist, WishlistReducer } from '../../Slices/Produ
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { FaHeart } from 'react-icons/fa';
 import { IoIosHeart } from 'react-icons/io';
-// import { toast, Bounce } from 'react-toastify';
+import { toast, Bounce } from 'react-toastify';
 
 
 export const Card = ({ img, img_title, percentCss, percent, title, className, discountPrice, previousPrice, children, review, priceCss, ProductDetails, id, productDetails, reviewCSS, cartCss, eyeIconCss, heartIconCss, delettIconCss, cartIcon }) => {
+
+
 
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,21 +25,36 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
 
   // Cart Functionality
 
+  const cartSuccess = () => toast.success("Product added to cart!");
+  const cartRemove = () => toast.info("Product is already in cart!");
+
+  const cart = useSelector((state) => state.allProducts.cart)
+  const isProduct = cart.find((item) => item.id === id);
+
   const handleCart = () => {
-    dispatch(CartReducer(productDetails))
+    if(!isProduct){
+      dispatch(CartReducer(productDetails))
+      cartSuccess()
+    }else{
+      cartRemove()
+    }
   };
 
   // Wishlist Heart Functionality
 
-  const wishlist = useSelector((state) => state.allProducts.wishlist);
+  const wishlistSuccess = () => toast.success("Product added to wishlist!");
+  const wishlistRemove = () => toast.info("Product removed from wishlist!");
 
+  const wishlist = useSelector((state) => state.allProducts.wishlist);
   const isLiked = wishlist.find((item) => item.id === id);
 
   const handleHeart = () => {
     if (!isLiked) {
       dispatch(WishlistReducer(productDetails));
+      wishlistSuccess()
     } else {
       dispatch(RemoveWishlist(id));
+      wishlistRemove()
     }
   };
 
@@ -55,9 +72,12 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
             <p className={`text-white text-xs font-normal leading-4.5 bg-red rounded py-1 px-3 ${percentCss}`}>-{percent}%</p>
           </div>
           <div className='space-y-2 text-3xl'>
-            <RiDeleteBinLine 
-              onClick={()=> dispatch(RemoveWishlist(id))} 
-              className={`hidden p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${delettIconCss}`} 
+            <RiDeleteBinLine
+              onClick={() => {
+                dispatch(RemoveWishlist(id));
+                wishlistRemove();
+              }}
+              className={`hidden p-1.25 bg-white rounded-full transition hover:text-red hover:scale-110 ${delettIconCss}`}
             />
 
             <div onClick={handleHeart}>
@@ -104,4 +124,4 @@ export const Card = ({ img, img_title, percentCss, percent, title, className, di
       </div>
     </div>
   )
-}
+};
